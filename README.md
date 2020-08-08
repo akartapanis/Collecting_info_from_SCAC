@@ -12,4 +12,4 @@ remaining links manually.
 
 In an attempt not to overload stanford's website, a sleep of 10 seconds between page requests is imposed.
 
-Note: You have to define the output location on line 47.
+Note: You have to define the output location on line 32.
