@@ -58,7 +58,7 @@ def get_filings(filings_page):
         cells = link.findAll('td')
 
         # Add to Dictionary
-        temp = dict(Link=link_temp,
+        temp = dict(Link='http://securities.stanford.edu/{}'.format(link_temp),
                     Company=cells[0].text.strip(),
                     Filing_Date=cells[1].text.strip(),
                     District_Court=cells[2].text.strip(),
@@ -193,6 +193,7 @@ num_filings = html.findAll('div', {'id': 'filings'})[0].text
 num_filings = int(re.findall(r'\((.*?)\)', num_filings)[0])
 num_pages = math.ceil(num_filings / 20) # 20 filings listed per page
 
+num_pages=2
 
 #%%
 '''
@@ -211,7 +212,7 @@ for i in range(num_pages):
     else:
         filings_error_list.append("http://securities.stanford.edu/filings?page={}".format(j))
 
-    time.sleep(10)
+    # time.sleep(10)
     
 # Output
 filings_df = pd.DataFrame.from_dict(filings_list)
@@ -226,16 +227,16 @@ Having identified all filings, loop over them to get case specific details
 for i in tqdm(filings_list):
     
     # Request case page
-    case_page = requests.get("http://securities.stanford.edu/{}".format(i['Link']))
+    case_page = requests.get(i['Link'])
 
     # If successful, then get details
     if case_page.status_code == 200:
         get_details(case_page)
     # If not then add to error list
     else:
-        addit_info_error_list.append("http://securities.stanford.edu/{}".format(i['Link']))
+        addit_info_error_list.append(i['Link'])
 
-    time.sleep(10)
+    # time.sleep(10)
     
 # Output
 fic_df = pd.DataFrame.from_dict(fic_list)
