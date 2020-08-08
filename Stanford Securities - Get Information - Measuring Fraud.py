@@ -2,24 +2,7 @@
 #%%
 '''
 Written by: Antonis Kartapanis
-Scope: Retrieve info from http://securities.stanford.edu. The program initially loops over the filings list provided
-    by stanford on http://securities.stanford.edu/filings.html. Having collected that information (which will be 
-    output in an excel file called filings_list.xlsx), it then loops over individual case filings and collects info
-    regarding: 1) the status and first identified complaint (output in an excel file called fic_list.xlsx), 
-    2) details from the reference complaint (output in an excel file called ref_list.xlsx) and 3) company related
-    info (output in an excel file called comp_info.xlsx). The files can be linked to each other based on the case link
-    url.
-
-    In an attempt not to overload stanford's website, a sleep of 10 seconds between page requests is imposed.
-
-You have to define the output location on line 47.
-
-There should be a 1:1 link between all files. If not, then something went wrong.
-
-The code is provided "as is" without warranty of any kind. Future changes made on Stanford can, and most likely will,
-affect the overall functionality of the code.
 '''
-
 
 #%%
 '''
