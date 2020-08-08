@@ -1,5 +1,5 @@
 # General Information
-This repository provides code to help researchers collect information regarding securities class actions from Stanford Class Action Clearinghouse (SCAC) (http://securities.stanford.edu). The code supplements "Measuring Accounting Fraud And Irregularities Using Public And Private Enforcement" (Donelson, Kartpanis, McInnis, and Yust 2020) available at https://sites.google.com/site/christopheryust/research.
+This repository provides code to help researchers collect information regarding securities class actions from Stanford Class Action Clearinghouse (SCAC) (http://securities.stanford.edu). The code supplements "Measuring Accounting Fraud And Irregularities Using Public And Private Enforcement" (Donelson, Kartapanis, McInnis, and Yust 2020) available at https://sites.google.com/site/christopheryust/research.
 
 # Code Related Information
 The code initially loops over the filings list provided by stanford on http://securities.stanford.edu/filings.html. Once the information is collected, it is the output in 
